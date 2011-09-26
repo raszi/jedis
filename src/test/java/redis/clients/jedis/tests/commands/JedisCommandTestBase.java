@@ -45,7 +45,7 @@ public abstract class JedisCommandTestBase extends JedisTestBase {
         return j;
     }
 
-	@Override
+    @Override
     protected void assertEquals(List<byte[]> expected, List<byte[]> actual) {
         assertEquals(expected.size(), actual.size());
         for (int n = 0; n < expected.size(); n++) {
@@ -66,8 +66,8 @@ public abstract class JedisCommandTestBase extends JedisTestBase {
                 }
             }
             if (!contained) {
-                throw new ComparisonFailure("element is missing", next
-                        .toString(), actual.toString());
+                throw new ComparisonFailure("element is missing",
+                        Arrays.toString(next), actual.toString());
             }
         }
     }
